@@ -3,14 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Indlæs teksttyper fra google fonts og ikoner fra material icons.-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    <!-- Link med vores eget eksterne stylesheet.-->
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <title>Red dyrene i Amazonas</title>
 </head>
 <body>
-    <div class="app">
+    <div class="app" style="overflow-x: hidden;">
         <nav class="header"></nav>
+        <div class="container">
+            <div class="popup">
+                <!--Link til vores anden side.-->
+                <p>Hvor meget ved du om Amazonas dyreliv? <a href="vendespil.html">Tag testen her</a></p>
+                <button onclick="close_popup()" class="material-icons" style="margin-right: 35px;"> <!--Kør en funktion, når knappen bliver trykket på.-->
+                    close
+                </button>
+            </div>
+            <h1 class="header-text">Red dyrelivet i Amazonas jungle</h1>
+
+            <div class="box-container">
+                <img class="box-image" src="/app/img/koala.jpg" /> <!--Indlæs et billede af koalaen-->
+                <h1 class="box-header">Gitte</h1>
+                <p class="box-text">
+                    Gitte er en Koala fra Amazonas. Hun er 9 år gammel og har haft et forholdsvis hårdt liv. <br>
+                    Gitte er mor til 6 unger og skal finde mad til hver og en af dem, men da mennesker ankom til Gittes territorie, opdagede de hende ikke engang.
+                    De gik bare igang med at fælde skoven omkring hende og hendes unger, for det var jo et højst profitabelt område. Hvis vi og vores kamera folk ikke havde stoppet fældningen,
+                    havde Gitte og ungerne måske ikke været her i dag.
+                    Gitte er ikke den eneste koala der har er truet, og ved at sprede opmærksomhed på hvad der foregår hos disse dyr, kan du være med til at stoppe brutaliteten.
+                </p>
+            </div>
+        </div>
+        <!--Brug inline css til at style footeren.-->
+        <footer style="height: 100px; background-color: #1e1e1e; margin-top: 200px;">
+            <p style="height: 20px; margin-left: 50px; margin-top: calc((100px - 20px) / 2)">&copy;2021 Amazonas Beskyttelses forening</p>
+        </footer>
     </div>
     
-    <script src="js/main.js"></script>
+    <script>
+        // close_popup lukker popuppen.
+        function close_popup() {
+            // Finder et element med klasse navnet "popup" og derefter siger at den ikke skal vises med display = "none".
+            document.getElementsByClassName("popup")[0].style.display = "none";
+        }
+    </script>
+
+    <!--Indlæs vores javascript.-->
+    <script src="js/slideshow.js" type="text/js"></script>
 </body>
 </html>
